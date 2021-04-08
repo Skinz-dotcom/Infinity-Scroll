@@ -20,10 +20,9 @@ function initialFetch() {
   if (initialRequest !== true) {
     numberImagesRequested = 30;
     console.log(numberImagesRequested);
-    getPhotos();
   } else {
-    getPhotos();
     initialRequest = false;
+    getPhotos();
   }
 }
 
@@ -33,6 +32,7 @@ function imageLoaded() {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.hidden = true;
+    initialFetch();
   }
 }
 
@@ -75,7 +75,6 @@ async function getPhotos() {
   try {
     const response = await fetch(apiUrl);
     photosArray = await response.json();
-    initialRequest = false;
     displayPhotos();
   } catch (error) {
     //   Catch Error Here
@@ -90,7 +89,7 @@ window.addEventListener("scroll", () => {
     ready
   ) {
     ready = false;
-    initialFetch();
+    getPhotos();
   }
 });
 
