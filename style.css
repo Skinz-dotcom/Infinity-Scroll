@@ -51,7 +51,7 @@ h1 {
 
 .return-to-top {
   position: fixed;
-  top: 94%;
+  top: 94vh;
   left: 1rem;
   padding: 10px;
   border-radius: 10px;
@@ -69,5 +69,11 @@ h1 {
 
   .image-container {
     margin: 10px;
+  }
+}
+
+@media screen and (min-height: 375px) {
+  .return-to-top {
+    top: 88vh;
   }
 }
