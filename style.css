@@ -49,6 +49,17 @@ h1 {
   margin-top: 5px;
 }
 
+.return-to-top {
+  position: fixed;
+  top: 94%;
+  left: 23.75rem;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(53, 53, 73, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
 /* Media Query: Large Smart Phone */
 
 @media screen and (max-width: 600px) {
@@ -58,5 +69,9 @@ h1 {
 
   .image-container {
     margin: 10px;
+  }
+
+  .return-to-top {
+    left: 1rem;
   }
 }

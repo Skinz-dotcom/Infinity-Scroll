@@ -7,19 +7,18 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 let initialRequest = true;
-let numberImagesRequested = 5;
+let initialImagesRequested = 5;
+let numberImagesRequested = 0;
 
 // Unsplash API
-let count = numberImagesRequested;
 const apiKey = "1OmW0ZHtYr-LDhqaJXGCIjJOMzhi4thZkOPS8ZMQ3EI";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${initialImagesRequested}`;
 
 // Check if initial fetch request
 function initialFetch() {
-  console.log(initialRequest);
   if (initialRequest !== true) {
     numberImagesRequested = 30;
-    console.log(numberImagesRequested);
+    apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${numberImagesRequested}`;
   } else {
     initialRequest = false;
     getPhotos();
